@@ -1,3 +1,4 @@
+import os
 from flask import (
     Flask,
     render_template,
@@ -8,8 +9,6 @@ from flask import (
     flash,
 )
 from pymongo import MongoClient
-from datetime import datetime
-import os
 import bcrypt
 
 # Load environment variables
@@ -39,7 +38,7 @@ except Exception as e:
     print(f"Error connecting to MongoDB: {e}")
     raise
 
- 
+
 # Routes
 @app.route("/")
 def index():
@@ -88,7 +87,9 @@ def signup():
         hashed_password = bcrypt.hashpw(password, bcrypt.gensalt())
         # Insert the new user into the database
         users_collection.insert_one({"username": username, "password": hashed_password})
-        flash("Account created successfully. Please log in.", "success")  # Flash success message
+        flash(
+            "Account created successfully. Please log in.", "success"
+        )  # Flash success message
         return redirect(url_for("login"))  # Redirect to the login page
 
     return render_template("signup.html")  # Render the signup page

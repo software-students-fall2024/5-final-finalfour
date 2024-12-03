@@ -22,14 +22,13 @@ services:
     environment:
       - MONGO_URI=${MONGO_URI}
       - MONGO_DBNAME=${MONGO_DBNAME}
-    # environment:
-    #   - MONGO_URI=mongodb://mongo:27017/${SWE_Project_4}
     depends_on:
       - mongo
     command: ["pipenv", "run", "python", "bar-recs.py"]  
 
   mongo:
     image: mongo:latest
+    container_name: mongo
     ports:
       - "27017:27017"
     volumes:

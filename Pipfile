@@ -1,4 +1,3 @@
-
 [[source]]
 url = "https://mirrors.aliyun.com/pypi/simple/"
 verify_ssl = true
@@ -10,6 +9,7 @@ pymongo = "*"
 python-dotenv = "*"
 bcrypt = "*" 
 numpy = "*"
+flask-pymongo = "*"
 
 [dev-packages]
 
