@@ -40,10 +40,7 @@ def account():
     return render_template("account.html")  # link to account.html
 
 
-# # --------LOGIN PAGE--------
-
-
-#     return render_template("login.html") # link to login.html
+# --------LOGIN PAGE--------
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -160,7 +157,7 @@ def edit(bar_id):
 
     if request.method == "POST":
         # get data
-        name = request.form.get("name")
+        name = bar["name"] # get bar name
         type = request.form.get("type")
         occasion = request.form.get("occasion")
         area = request.form.get("area")
@@ -216,21 +213,27 @@ def delete(bar_id):
 def search():
     if "user_id" not in session:
         return redirect(url_for("login"))  # direct to login.html
+    
+    bars = []
+    category = None
 
-    # query variables
-    query = {"user_id": session.get("user_id")}  # user-specific
-    category = request.form.get("category")
-    search_value = request.form.get(category)
+    if request.method == "POST":
+        # query variables
+        query = {"user_id": session.get("user_id")}  # user-specific
+        category = request.form.get("category")
+        search_value = request.form.get(category)
 
-    # query based on chosen category (partial vs exact matching)
-    if category:
-        if category == "Name":
-            if isinstance(search_value, str):
-                query[category] = {"$regex": search_value, "$options": "i"}
-        else:
-            query[category] = search_value  # exact matching (drown-drop cats)
+        # query based on chosen category (partial vs exact matching)
+        if category:
+            if category == "Name":
+                if isinstance(search_value, str):
+                    query[category] = {"$regex": search_value, "$options": "i"}
+            else:
+                query[category] = search_value  # exact matching (drown-drop cats)
 
-    bars = list(bars_collection.find(query))  # search by category
+        bars = list(bars_collection.find(query))  # search by category
+
+    else: flash("Please select a category and enter a value.", "warning")
 
     return render_template("search.html", bars=bars, category=category)  # link to html
 
@@ -275,8 +278,6 @@ from web_app.recommender.recommender import (
     compute_sim_matrix,
     recommend_bars,
 )
-
-
 @app.route("/recs", methods=["GET", "POST"])
 def recommend():
     user_id = session.get("user_id")
@@ -294,35 +295,27 @@ def recommend():
     if not os.path.exists(bars_json_path):
         raise FileNotFoundError(f"bars.json file not found at {bars_json_path}")
 
-    # Load JSON file and create DataFrame
     with open(bars_json_path, "r") as file:
         bars_data = json.load(file)
 
-    # Normalize JSON structure into a DataFrame
-    bars_df = pd.json_normalize(bars_data)
+    bars_df = pd.json_normalize(bars_data) # normalize JSON into DF
 
-    # Ensure proper columns exist
     required_columns = [
         "Name",
         "Type",
         "Occasion",
         "Area",
         "Reservation",
-        "Cost",
-        "Rating",
+        "Cost"
     ]
     if not all(col in bars_df.columns for col in required_columns):
         raise ValueError(
             f"The JSON data is missing required columns: {required_columns}"
         )
+    bars_df = bars_df[required_columns] # select required
+    bars_df = bars_df[~bars_df["Name"].isin(user_bar_names)] # remove existing bars from recs
 
-    # Select only the required columns
-    bars_df = bars_df[required_columns]
-
-    # Remove user's existing bars from recommendations
-    bars_df = bars_df[~bars_df["Name"].isin(user_bar_names)]
-
-    # Preprocess and compute recommendations
+    # preprocess/compute recommendations
     bars_df = preprocess_bars(bars_df)
     cosine_sim = compute_sim_matrix(bars_df)
     recommendations = recommend_bars(user_bar_names, bars_df, cosine_sim)
@@ -348,8 +341,8 @@ def recommend():
             bar_to_add = next(
                 (bar for bar in recommendations if bar["name"] == bar_name), None
             )
+            # add bar to user's database
             if bar_to_add:
-                # Add bar to the user's database
                 new_bar = {
                     "user_id": user_id,
                     "name": bar_to_add["name"],

@@ -119,7 +119,6 @@ def test_edit_bar(client):
     response = client.post(
         f"/edit/{bar_id}",
         data={
-            "name": "Updated Bar",
             "type": "Bar",
             "occasion": "Date",
             "area": "Midtown",
@@ -130,7 +129,7 @@ def test_edit_bar(client):
     )
     assert response.status_code == 302
     updated_bar = bars_collection.find_one({"_id": bar_id})
-    assert updated_bar["name"] == "Updated Bar"
+    assert updated_bar["name"] == "Old Bar"  # Name should not change
 
 
 def test_add_bar(client):
