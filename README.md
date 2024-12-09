@@ -5,39 +5,34 @@
 [![Event Logger CI/CD](https://github.com/software-students-fall2024/5-final-finalfour/actions/workflows/event-logger.yml/badge.svg)](https://github.com/<your-username>/<your-repo>/actions/workflows/event-logger.yml)
 
 
-# NYC BAR RECOMMENDER SYSTEM
-
-An exercise to put to practice software development teamwork, subsystem communication, containers, deployment, and CI/CD pipelines. See [instructions](./instructions.md) for details.
+# HOME-BREWED: NYC BAR RECOMMENDER SYSTEM
 
 ## TABLE OF CONTENTS
 
 1. [Description](#description)
-2. [Links to Container Images](#container-images)
+2. [Links to DockerHub Images](#dockerhub-images)
 3. [Setup Steps](#setup-steps)
 4. [Team Members](#team-members)
 
 ## DESCRIPTION
-Home-Brewed Web Application
 
-Home-Brewed is a web application designed to help users manage and explore their favorite bars based on personalized preferences. It provides a seamless user experience for adding, searching, sorting, editing, and receiving bar recommendations.
+***Home-Brewed*** is a web application designed to help users manage and explore their favorite bars based on personalized preferences. It provides a seamless user experience for adding, searching, sorting, editing, and receiving bar recommendations.
 
 ### Key Features
 
-1. **User Authentication**
-	-  Secure login and logout features to ensure user sessions are protected.
-2. **Intuitive Navigation**
-	- A clean and organized navigation bar allows users to seamlessly switch between key functionalities, including: Home, Add, Edit/Delete, Search, Sort, and Reccomendations
+1. ***User Authentication:*** Secure login and logout features to ensure user sessions are protected.
+
+2. ***Intuitive Navigation:*** A clean and organized navigation bar allows users to seamlessly switch between the key functionalities Home, Add, Edit/Delete, Search, Sort, and Reccomendations.
    
-3. **Add New Bars**
-	- Users can contribute by adding their favorite bars to the database with details such as: Name, Type, Occasion, Location, Reservation Availability, and ost 
-4. **Edit/Delete Existing Bars**
-	- Easily modify or remove existing entries to keep the data up-to-date and accurate.
-5. **Search for Bars**
-   - Quickly find bars that match specific criteria or keywords.
-6. **Sort Bars**
-   - Organize bars based on user preferences such as: Cost, Type, and Ocassion
-7. **Personalized Recommendations**
-   - Displays a curated list of bars tailored to user preferences, including: Type, Occasion, Area, Reservation status, Cost, Type, Occasion
+3. ***Add New Bars:*** Users can contribute by adding their favorite bars to the database with the categories name, type, occasion, area, if reservation is needed, cost, and if user visited.
+
+4. ***Edit/Delete Existing Bars:*** Easily modify or remove existing entries to keep the bar database up-to-date and accurate.
+
+5. ***Search for Bars:*** Quickly find bars that match specific criteria or keywords.
+  
+6. ***Sort Bars:*** Organize bars based on any category like occasion, area, cost, or if the user visited.
+  
+7. ***Personalized Recommendations:*** Displays a curated list of bars with details tailored to user preferences based on the saved bars.
 
 ## DockerHub Images
 
@@ -54,6 +49,7 @@ docker pull emilyhuang19/web_app:latest
 ### Bar Recs
 [![DockerHub](https://img.shields.io/badge/DockerHub-BarRecs-blue?logo=docker)](https://hub.docker.com/repository/docker/emilyhuang19/bar-recs/general)
 
+Pull the image:
 
 ```
 docker pull emilyhuang19/bar-recs:latest
@@ -70,8 +66,8 @@ cd <5-final-finalfour>
 
 **2. Verify MongoDB Connection:**
 
-- _Download MongoDB:_ download this extension onto your chosen source code editor
-- _Connect to Database URL:_ mongodb://mongodb:27017/
+- *Download MongoDB:* download this extension onto your chosen source code editor
+- *Connect to Database URL:* mongodb+srv://eh96:finalfour123@bars.ygsrg.mongodb.net/finalfour?retryWrites=true&w=majority&tlsAllowInvalidCertificates=true
 
 **3. Go to Correct Filepath:**
 
@@ -124,15 +120,7 @@ docker-compose down --volumes --remove-orphans
 docker-compose up --build
 ```
 
-**8. Get Drinking!:** Access our NYC Bars Recommender System [here](http://127.0.0.1:5888)!
-
-We cannot get Digital Ocean to work so to use or Recommender System locally run the following commands:
-
-```
-export FLASK_APP=web-app/app.py 
-
-flask run
-```
+**8. Get Drinking!:** Access our NYC Bars Recommender System ([here](http://104.236.30.209:5000/))!
 
 ## TEAM MEMBERS
 
