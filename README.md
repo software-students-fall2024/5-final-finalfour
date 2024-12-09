@@ -65,35 +65,12 @@
 
    - Updates are instantly reflected in the application.
 
-6. **Responsive Design**
-
-
-   - Intuitive and user-friendly interface optimized for both desktop and mobile devices.
-
-7. **Analytics**
-
-
-   - Track bar visit history and analyze user preferences for better recommendations.
-
-
-
+ -miss part
 8. **Secure Data Handling**
-
-   - Incorporates secure session management and environment-based configurations.
-
-
-   - Ensures encryption for data communication and secure storage of sensitive information.
-
-## Technology Stack
-
-
-
+ 
 
 - **Frontend:** HTML, CSS, JavaScript for an interactive and responsive UI.
 
-
-
-- **Backend:** Flask (Python) framework for robust server-side logic.
 
 
 
