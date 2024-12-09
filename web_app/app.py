@@ -160,7 +160,7 @@ def edit(bar_id):
 
     if request.method == "POST":
         # get data
-        name = request.form.get("name")
+        name = bar["name"]
         type = request.form.get("type")
         occasion = request.form.get("occasion")
         area = request.form.get("area")
