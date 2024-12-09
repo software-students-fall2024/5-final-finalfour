@@ -16,12 +16,14 @@ load_dotenv()
 app = Flask(__name__)
 
 app.config["MONGO_URI"] = os.getenv(
-    "MONGO_URI", "mongodb+srv://eh96:finalfour123@bars.ygsrg.mongodb.net/finalfour?retryWrites=true&w=majority"
+    "MONGO_URI",
+    "mongodb+srv://eh96:finalfour123@bars.ygsrg.mongodb.net/finalfour?retryWrites=true&w=majority",
 )
 app.config["SECRET_KEY"] = "this_is_my_random_secret_key_987654321"
 # Initialize MongoDB
 mongo = PyMongo(app)
 db = mongo.db
+
 
 def load_ratings_data():
     """

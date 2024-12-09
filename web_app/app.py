@@ -21,7 +21,10 @@ from dotenv import load_dotenv
 load_dotenv()  # load .env file
 app = Flask(__name__)
 app.secret_key = "this_is_my_random_secret_key_987654321"
-MONGO_URI = os.getenv("MONGO_URI", "mongodb+srv://eh96:finalfour123@bars.ygsrg.mongodb.net/finalfour?tlsAllowInvalidCertificates=true")
+MONGO_URI = os.getenv(
+    "MONGO_URI",
+    "mongodb+srv://eh96:finalfour123@bars.ygsrg.mongodb.net/finalfour?tlsAllowInvalidCertificates=true",
+)
 MONGO_DBNAME = os.getenv("MONGO_DBNAME", "finalfour")
 
 # Connect to MongoDB
@@ -38,6 +41,7 @@ def account():
 
 
 # # --------LOGIN PAGE--------
+
 
 #     return render_template("login.html") # link to login.html
 @app.route("/login", methods=["GET", "POST"])
@@ -74,7 +78,6 @@ def login():
 
     # GET request just renders the login template
     return render_template("login.html")
-
 
 
 @app.route("/signup", methods=["GET", "POST"])
@@ -266,7 +269,12 @@ def sort():
 
 
 # --------RECOMMENDATIONS PAGE--------
-from web_app.recommender.recommender import load_bars, preprocess_bars, compute_sim_matrix, recommend_bars
+from web_app.recommender.recommender import (
+    load_bars,
+    preprocess_bars,
+    compute_sim_matrix,
+    recommend_bars,
+)
 
 
 @app.route("/recs", methods=["GET", "POST"])
@@ -357,7 +365,6 @@ def recommend():
                 return redirect(url_for("recommend"))
 
     return render_template("recommend.html", bars=recommendations)
-
 
 
 # --------LOGOUT PAGE--------
