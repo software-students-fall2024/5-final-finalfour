@@ -37,28 +37,28 @@
                 <div class="form-group">
                     <label for="type">Type</label>
                     <select id="type" name="type" required>
-                        <option value="Cocktail" {% if bar.type == 'cocktail' %}selected{% endif %}>Cocktail</option>
-                        <option value="Wine" {% if bar.type == 'wine' %}selected{% endif %}>Wine</option>
-                        <option value="Speakeasy" {% if bar.type == 'speakeasy' %}selected{% endif %}>Speakeasy</option>
-                        <option value="Live Music" {% if bar.type == 'livemusic' %}selected{% endif %}>Live Music</option>
-                        <option value="Sports" {% if bar.type == 'sports' %}selected{% endif %}>Sports</option>
-                        <option value="Dive" {% if bar.type == 'dive' %}selected{% endif %}>Dive</option>
-                        <option value="Pub" {% if bar.type == 'pub' %}selected{% endif %}>Pub</option>
-                        <option value="Other" {% if bar.type == 'other' %}selected{% endif %}>Other</option>
-                    </select><br><br>
+                        <option value="Cocktail" {% if bar.type == 'Cocktail' %}selected{% endif %}>Cocktail</option>
+                        <option value="Wine" {% if bar.type == 'Wine' %}selected{% endif %}>Wine</option>
+                        <option value="Speakeasy" {% if bar.type == 'Speakeasy' %}selected{% endif %}>Speakeasy</option>
+                        <option value="Live Music" {% if bar.type == 'Live Music' %}selected{% endif %}>Live Music</option>
+                        <option value="Sports" {% if bar.type == 'Sports' %}selected{% endif %}>Sports</option>
+                        <option value="Dive" {% if bar.type == 'Dive' %}selected{% endif %}>Dive</option>
+                        <option value="Pub" {% if bar.type == 'Pub' %}selected{% endif %}>Pub</option>
+                        <option value="Other" {% if bar.type == 'Other' %}selected{% endif %}>Other</option>
+                    </select>
                 </div>
 
                 <!-- Occasion -->
                 <div class="form-group">
                     <label for="occasion">Occasion</label>
                     <select id="occasion" name="occasion" required>
-                        <option value="Casual" {% if bar.occasion == 'cocktail' %}selected{% endif %}>Casual</option>
-                        <option value="Formal" {% if bar.occasion == 'formal' %}selected{% endif %}>Formal</option>
-                        <option value="Happy Hour" {% if bar.occasion == 'happyhour' %}selected{% endif %}>Happy Hour</option>
-                        <option value="Date" {% if bar.occasion == 'date' %}selected{% endif %}>Date</option>
-                        <option value="Dancing" {% if bar.occasion == 'dancing' %}selected{% endif %}>Dancing</option>
-                        <option value="Other" {% if bar.occasion == 'other' %}selected{% endif %}>Other</option>
-                    </select><br><br>
+                        <option value="Casual" {% if bar.occasion == 'Casual' %}selected{% endif %}>Casual</option>
+                        <option value="Formal" {% if bar.occasion == 'Formal' %}selected{% endif %}>Formal</option>
+                        <option value="Happy Hour" {% if bar.occasion == 'Happy Hour' %}selected{% endif %}>Happy Hour</option>
+                        <option value="Date" {% if bar.occasion == 'Date' %}selected{% endif %}>Date</option>
+                        <option value="Dancing" {% if bar.occasion == 'Dancing' %}selected{% endif %}>Dancing</option>
+                        <option value="Other" {% if bar.occasion == 'Other' %}selected{% endif %}>Other</option>
+                    </select>
                 </div>
 
                 <!-- Area -->
@@ -83,9 +83,9 @@
                 <div class="form-group">
                     <label for="reservation">Reservation</label>
                     <select id="reservation" name="reservation" required>
-                        <option value="Yes" {% if bar.reservation == 'yes' %}selected{% endif %}>Yes</option>
-                        <option value="No" {% if bar.reservation == 'no' %}selected{% endif %}>No</option>
-                    </select><br><br>
+                        <option value="Yes" {% if bar.reservation == 'Yes' %}selected{% endif %}>Yes</option>
+                        <option value="No" {% if bar.reservation == 'No' %}selected{% endif %}>No</option>
+                    </select>
                 </div>
 
                 <!-- Cost -->
@@ -103,9 +103,9 @@
                 <div class="form-group">
                     <label for="status">Visited?</label>
                     <select id="status" name="status" required>
-                        <option value="Yes" {% if bar.status == 'yes' %}selected{% endif %}>Yes</option>
-                        <option value="No" {% if bar.status == 'no' %}selected{% endif %}>No</option>
-                    </select><br><br>
+                        <option value="Yes" {% if bar.status == 'Yes' %}selected{% endif %}>Yes</option>
+                        <option value="No" {% if bar.status == 'No' %}selected{% endif %}>No</option>
+                    </select>
                 </div>
 
                 <button type="submit">Add Bar</button> <!-- Add bar -->   
