@@ -120,7 +120,7 @@ docker-compose down --volumes --remove-orphans
 docker-compose up --build
 ```
 
-**8. Get Drinking!:** Access our NYC Bars Recommender System ([here](http://104.236.30.209:5000/))!
+**8. Get Drinking!:** Access our NYC Bars Recommender System [here](http://104.236.30.209:5000/)!
 
 ## TEAM MEMBERS
 
