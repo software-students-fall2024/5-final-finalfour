@@ -31,27 +31,7 @@
 
 
    - Edit and delete bar entries to keep the user's list up-to-date.
- 
-4. **Recommendations**
 
-
-   - Receive tailored bar recommendations based on saved bars and preferences.
-
-
-   - Use advanced algorithms to suggest unexplored options.
-
-
-
-5. **Real-Time Updates**
-
-
-   - MongoDB integration ensures efficient data storage and retrieval.
-
-
-
-   - Updates are instantly reflected in the application.
-
- -miss part
 8. **Secure Data Handling**
  
 
