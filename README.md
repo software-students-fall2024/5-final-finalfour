@@ -10,23 +10,6 @@
 
 **Home-Brewed** is a versatile web application designed to enhance the way users explore, manage, and discover their favorite bars. This platform offers a personalized experience, catering to individual tastes and preferences, while simplifying the process of tracking and finding bars.
 
-## Key Features
-
-1. **User Authentication**
-
-
-   - Secure signup and login functionality using hashed passwords.
-
-
-   - Session-based user management to ensure personalized experiences.
-
-   - Add and save details of bars, including:
-
-
-     - Name, type, occasion, area, reservation requirements, cost, and status (visited or not visited).
-
-
-   - Edit and delete bar entries to keep the user's list up-to-date.
 
 8. **Secure Data Handling**
  
