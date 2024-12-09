@@ -38,7 +38,9 @@
 
 ### Web App
 
-[![DockerHub](https://img.shields.io/badge/DockerHub-WebApp-blue?logo=docker)]([https://hub.docker.com/r/emilyhuang19/web_app](https://hub.docker.com/repository/docker/emilyhuang19/web_app/general))
+![DockerHub](https://img.shields.io/badge/DockerHub-WebApp-blue?logo=docker)
+
+[Web App Image](https://hub.docker.com/repository/docker/emilyhuang19/web_app/general)
 
 Pull the image:
 
@@ -47,7 +49,9 @@ docker pull emilyhuang19/web_app:latest
 ```
 
 ### Bar Recs
-[![DockerHub](https://img.shields.io/badge/DockerHub-BarRecs-blue?logo=docker)](https://hub.docker.com/repository/docker/emilyhuang19/bar-recs/general)
+![DockerHub](https://img.shields.io/badge/DockerHub-BarRecs-blue?logo=docker)
+
+[Bar Recs Image](https://hub.docker.com/repository/docker/emilyhuang19/bar-recs/general)
 
 Pull the image:
 
