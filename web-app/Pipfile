@@ -1,0 +1,18 @@
+[[source]]
+url = "https://mirrors.aliyun.com/pypi/simple/"
+verify_ssl = true
+name = "pip_conf_index_global"
+
+[packages]
+flask = "*"
+python-dotenv = "*"
+bcrypt = "*" 
+numpy = "*"
+flask-pymongo = "*"
+pytest = "*"
+pymongo = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.10"
