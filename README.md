@@ -9,23 +9,7 @@
 # Home-Brewed
 
 **Home-Brewed** is a versatile web application designed to enhance the way users explore, manage, and discover their favorite bars. This platform offers a personalized experience, catering to individual tastes and preferences, while simplifying the process of tracking and finding bars.
-
-
-8. **Secure Data Handling**
  
-
-- **Frontend:** HTML, CSS, JavaScript for an interactive and responsive UI.
-
-
-
-
-
-- **Database:** MongoDB for storing and managing user and bar-related data.
-
-
-
-- **Testing:** Pytest for high code quality and reliable functionality.
-
 ## Purpose
 
 Home-Brewed is crafted for individuals passionate about discovering new bars and managing personal experiences. Whether for casual outings, date nights, or special occasions, this app empowers users to make informed decisions while keeping track of their favorite spots.
