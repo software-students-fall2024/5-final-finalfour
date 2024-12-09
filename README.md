@@ -31,21 +31,7 @@
 
 
    - Edit and delete bar entries to keep the user's list up-to-date.
-
-3. **Search and Sort**
-
-
-   - Search for bars based on specific attributes such as:
-   
-
-     - Name, type, or area.
-
-
-   - Sort bars by attributes like:
-
-
-     - Cost or reservation requirements, with ascending or descending order options.
-
+ 
 4. **Recommendations**
 
 
