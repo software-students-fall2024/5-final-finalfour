@@ -45,13 +45,6 @@
 
 
 
-
-- **Authentication:** bcrypt for secure password hashing.
-
-
-- **Docker:** Containerized deployment for consistent environment management.
-
-
 - **Testing:** Pytest for high code quality and reliable functionality.
 
 ## Purpose
