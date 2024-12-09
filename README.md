@@ -20,10 +20,6 @@
 
    - Session-based user management to ensure personalized experiences.
 
-2. **Bar Management**
-
-
-
    - Add and save details of bars, including:
 
 
